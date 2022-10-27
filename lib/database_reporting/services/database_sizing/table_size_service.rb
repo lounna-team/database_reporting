@@ -3,7 +3,7 @@ module DatabaseReporting
     module DatabaseSizing
       class TableSizeService
         attr_reader :database_name, :adapter
-        def initialize(table)
+        def initialize(table:)
           @table = table
           @database_name = ActiveRecord::Base.connection.instance_variable_get("@config")[:database]
           @adapter = ActiveRecord::Base.connection.adapter_name.downcase

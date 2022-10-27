@@ -31,7 +31,7 @@ module DatabaseReporting
             size = ActiveRecord::Base.connection.execute(sql1)&.first&.dig("page_size")&.to_i
             count = ActiveRecord::Base.connection.execute(sql2)&.first&.dig("page_count")&.to_i
             puts "#{size} * #{count} = #{size * count}"
-            return count
+            return size * count
           else
             puts "Adapter #{adapter} not supported"
             return 0
