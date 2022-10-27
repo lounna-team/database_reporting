@@ -7,12 +7,12 @@ Gem::Specification.new do |spec|
   spec.email       = ["diopmayacine86@gmail.com"]
   spec.homepage    = "https://www.hoggo.com"
   spec.summary     = "Summary of DatabaseReporting."
-  spec.description = "Getting info for database "
+  spec.description = "Reporting informations of the database"
     spec.license     = "MIT"
   
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
-  spec.metadata["allowed_push_host"] = "www.hogo.com"
+  spec.metadata["allowed_push_host"] = "www.hoggo.com"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://www.hoggo.com"
