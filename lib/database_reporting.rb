@@ -1,6 +1,7 @@
 require "database_reporting/version"
 require "database_reporting/railtie"
 require "database_reporting/services/database_sizing/gathering_data_service"
+require "database_reporting/services/database_sizing/gathering_data_table"
 
 module DatabaseReporting
   class Railtie < Rails::Railtie

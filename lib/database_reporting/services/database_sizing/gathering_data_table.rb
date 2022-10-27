@@ -1,4 +1,3 @@
-puts "#{klass.name} has #{klass.order(updated_at: :desc).first.updated_at} "
 module DatabaseReporting
   module Services
     module DatabaseSizing
@@ -17,9 +16,9 @@ module DatabaseReporting
               
               result_table_infos << {
                 table_name: klass.name,
-                table_size:
-                table_nb_ligne: klass.count,
-                table_last_entry: klass.order(updated_at: :desc).first.updated_at
+                table_size: "DatabaseReporting::Services::DatabaseSizing.TableSizeService.new(table: table).perform",
+                table_nb_lines: klass.count,
+                table_last_entry: klass.order(updated_at: :desc).first.updated_at.strftime("%d/%m/%Y")
               }
 
             rescue
@@ -29,6 +28,7 @@ module DatabaseReporting
 
           return result_table_infos
         end
+
       end
     end
   end
