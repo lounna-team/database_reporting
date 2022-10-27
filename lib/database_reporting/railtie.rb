@@ -1,7 +1,9 @@
+require 'database_reporting/services/database_sizing/gathering_data_service'
+require 'database_reporting/presenter/database_reporting_presenter'
 module DatabaseReporting
   class Railtie < ::Rails::Railtie
     rake_tasks do
-      load "tasks/database_reporting_tasks.rake"
+      load 'tasks/database_reporting_tasks.rake'
     end
   end
 end
