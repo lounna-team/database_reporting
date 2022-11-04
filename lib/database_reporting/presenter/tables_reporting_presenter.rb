@@ -9,6 +9,7 @@ module DatabaseReporting
         columns_infos.each do |column_infos|
           next unless column_infos[:column_sql_type] == 'boolean' || column_infos[:column_sql_type] == 'integer'
 
+          # TODO : change the presentation of the line and add a counter of the number of "errors" on the table
           puts check_column_validity(column_infos: column_infos)
         end
       end

@@ -11,6 +11,7 @@ module DatabaseReporting
         end
 
         def perform
+          # TODO : add an error handler in case the user is entering a table not in the database
           result_columns_infos = []
           columns_array = table_name.constantize.columns
           columns_array.each do |column|
