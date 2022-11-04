@@ -7,6 +7,11 @@ namespace :database_reporting do
     # puts data
     # puts data2
     # puts data3
-    DatabaseReporting::Presenter::DatabaseReportingPresenter.new.call
+    DatabaseReporting::Presenter::DatabaseReportingPresenter.new.perform
+  end
+
+  desc 'Task that returns if a table is correctly created'
+  task table_reporting: :environment do
+    DatabaseReporting::Presenter::TablesReportinngPresenter.new.perform
   end
 end

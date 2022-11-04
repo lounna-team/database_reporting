@@ -10,7 +10,7 @@ module DatabaseReporting
         @reporting_return = ''
       end
 
-      def call
+      def perform
         total_db_size = reporting_hash[0][:db_name]
         puts "TOTAL DB SIZE : #{total_db_size} \n"
         tables = reporting_hash[1]
