@@ -12,7 +12,6 @@ namespace :database_reporting do
 
   desc 'Task that returns if a table is correctly created'
   task table_reporting: :environment do
-    # TODO : add a service to loop on tables of the database
     DatabaseReporting::Presenter::TablesReportingPresenter.new.perform
   end
 end
