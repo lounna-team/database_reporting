@@ -4,14 +4,21 @@ module DatabaseReporting
     module ReportingTables
       # Class that gathers all columns of a table
       class GatheringTableColumns
-        attr_accessor :table_name
-
-        def initialize(table_name:)
-          @table_name = table_name
+        def perform
+          result_gathering_tables_columns = []
+          Rails.application.eager_load!
+          descendants = ActiveRecord::Base.descendants.collect(&:name)
+          descendants.shift(1)
+          descendants.pop(9)
+          descendants.each do |table_name|
+            result_gathering_tables_columns << retrieve_all_columns_infos(table_name: table_name)
+          end
+          result_gathering_tables_columns
         end
 
-        def perform
-          # TODO : add an error handler in case the user is entering a table not in the database
+        private
+
+        def retrieve_all_columns_infos(table_name:)
           result_columns_infos = []
           columns_array = table_name.constantize.columns
           columns_array.each do |column|
