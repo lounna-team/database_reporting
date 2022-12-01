@@ -17,7 +17,7 @@ module DatabaseReporting
             puts ActiveRecord::Base.connection.execute(sql).fetch_hash.values.first
           when "postgres", "postgresql"
             sql = "SELECT pg_size_pretty(pg_database_size('#{database_name}'));"
-            count ActiveRecord::Base.connection.execute(sql)[0]["pg_size_pretty"]
+            count = ActiveRecord::Base.connection.execute(sql)[0]["pg_size_pretty"]
             puts count
             return count
           when "oracle", "oci"

@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     database_reporting (0.1.0)
-      rails (>= 7.0.4)
+      rails (>= 6.1)
 
 GEM
   remote: https://rubygems.org/
@@ -73,6 +73,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
     builder (3.2.4)
+    colorize (0.8.1)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     erubi (1.11.0)
@@ -102,6 +103,7 @@ GEM
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    pg (1.3.4)
     racc (1.6.0)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -133,9 +135,6 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    sqlite3 (1.5.3)
-      mini_portile2 (~> 2.8.0)
-    sqlite3 (1.5.3-arm64-darwin)
     thor (1.2.1)
     timeout (0.3.0)
     tzinfo (2.0.5)
@@ -150,8 +149,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colorize (~> 0.8.1)
   database_reporting!
-  sqlite3
+  pg (= 1.3.4)
 
 BUNDLED WITH
    2.3.7

@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_27_143758) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_161907) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -24,9 +27,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_27_143758) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.integer "gender", default: 0, null: false
+    t.boolean "in_portability", default: false
+    t.integer "college_type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
