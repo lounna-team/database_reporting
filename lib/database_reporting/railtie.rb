@@ -5,6 +5,7 @@ require 'database_reporting/services/database_sizing/gathering_data_table'
 require 'database_reporting/services/database_sizing/database_size_service'
 require 'database_reporting/services/database_sizing/table_size_service'
 require 'database_reporting/services/reporting_tables/gathering_table_columns'
+require 'database_reporting/services/database_sizing/column_data_service'
 
 module DatabaseReporting
   class Railtie < ::Rails::Railtie
