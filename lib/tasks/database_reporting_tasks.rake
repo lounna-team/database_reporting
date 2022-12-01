@@ -14,4 +14,9 @@ namespace :database_reporting do
   task table_reporting: :environment do
     DatabaseReporting::Presenter::TablesReportingPresenter.new.perform
   end
+
+  desc 'Task that returns if a table is correctly created'
+  task column_reporting: :environment do
+    DatabaseReporting::Services::DatabaseSizing::ColumnDataService.new.call
+  end
 end
