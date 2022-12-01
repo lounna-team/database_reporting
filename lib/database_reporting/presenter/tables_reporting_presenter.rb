@@ -67,14 +67,10 @@ module DatabaseReporting
       def check_enum_validity(column_infos:)
         return text_red("#{column_infos} <== ENUM IS NOT DEFINED CORRECTLY") if column_infos[:column_nullable]
         return text_red("#{column_infos} <== ENUM IS NOT DEFINED CORRECTLY") if column_infos[:column_default_value].blank?
-
-        text_green("#{column_infos} <== ENUM IS CORRECTLY DEFINED")
       end
 
       def check_column_validity(column_infos:)
         return text_red("#{column_infos} <== COLUMN IS NOT DEFINED CORRECTLY") if column_infos[:column_nullable] || column_infos[:column_default_value].blank?
-
-        text_green(column_infos)
       end
 
       def datas
