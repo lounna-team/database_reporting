@@ -7,15 +7,19 @@ module DatabaseReporting
       private
 
       def text_red(value)
-        value.colorize(:red)
+        value.to_s.colorize(:red)
       end
 
       def text_yellow(value)
-        value.colorize(:yellow)
+        value.to_s.colorize(:yellow)
+      end
+
+      def text_light_blue(value)
+        value.to_s.colorize(:light_blue)
       end
 
       def text_green(value)
-        value.colorize(:green)
+        value.to_s.colorize(:green)
       end
     end
   end

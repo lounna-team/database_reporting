@@ -8,9 +8,11 @@ module DatabaseReporting
           result_gathering_tables_columns = []
           Rails.application.eager_load!
           descendants = ActiveRecord::Base.descendants.collect(&:name)
-          descendants.shift(1)
-          descendants.pop(9)
+          descendants.shift(10)
+          # descendants.pop(9)
           descendants.each do |table_name|
+            next if table_name.match?(/::/) || table_name.match?(/ApplicationRecord/) || table_name.match?(/Scrapper/)
+
             result_gathering_tables_columns << retrieve_all_columns_infos(table_name: table_name)
           end
           result_gathering_tables_columns

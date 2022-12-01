@@ -14,4 +14,14 @@ namespace :database_reporting do
   task table_reporting: :environment do
     DatabaseReporting::Presenter::TablesReportingPresenter.new.perform
   end
+
+  task test_hoggo: :environment do
+    Rails.application.eager_load!
+    descendants = ActiveRecord::Base.descendants.collect(&:name)
+    descendants.each do |table_name|
+      next if table_name.match?(/::/) || table_name.match?(/ApplicationRecord/) || table_name.match?(/Scrapper/)
+
+      puts table_name
+    end
+  end
 end
