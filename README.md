@@ -21,6 +21,24 @@ Or install it yourself as:
 $ gem install database_reporting
 ```
 
+Usage :
+
+Database sizing report
+```ruby
+rails 'database_reporting:database_sizing'
+```
+Database tables reports
+
+```ruby
+rails 'database_reporting:table_reporting'
+```
+
+Database columns reports
+
+```ruby
+rails 'database_reporting:column_reporting'
+```
+
 ## Contributing
 Contribution directions go here.
 
